@@ -1,0 +1,134 @@
+<!--ya puede ser poblado-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .custom-logo {
+          max-width: 80px;
+        }
+    </style>
+
+    <style>
+        .custom-navbar {
+          background-color: #e38787;
+        }
+    </style>
+
+    <style>
+        .nav-item {
+          font-size: 18px;
+          font-weight: 600; 
+        }
+    </style>
+
+    <style>
+        /*No se como cambiar el color de esa wea*/
+        .custom-toggler-icon {
+          background-color: #ffffff; 
+        }
+    </style>
+    <style>
+      .body{
+        margin: 3%;
+        padding: 3%;
+        border: 8px solid #e38787;
+        border-radius: 12px;
+      }
+    </style>
+      
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <a class="navbar-brand" href="#">
+            <img src="C:\Users\PC\Documents\tunitacos-laravel\tunitacos-laravel\Assets\TuniTaco.png" alt="Your Logo" class="custom-logo"/>
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon custom-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active mr-3">
+                <a class="nav-link text-white" href="Home.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item mr-3">
+                <a class="nav-link text-white" href="Orders.html">Orders</a>
+              </li>
+              <li class="nav-item mr-3">
+                <a class="nav-link text-white" href="Posts.html">Posts</a>
+              </li>
+              <li class="nav-item mr-3">
+                <a class="nav-link text-white" href="Selection.html">Selection</a>
+              </li>              
+          </ul>
+        </div>
+    </nav>
+
+
+    <div class="body">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Product</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Taco de hongos</td>
+            <td>
+              <div class="form-group">
+                <select class="form-control">
+                  <option value="processing">Processing</option>
+                  <option value="shipped">Shipped</option>
+                  <option value="delivered">Delivered</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <button class="btn btn-primary order-info" data-toggle="modal" data-target="#orderInfoModal">Info</button>
+              <button class="btn btn-success order-confirm">Confirm</button>
+            </td>
+          </tr>
+          <!-- more rows as needed -->
+        </tbody>
+      </table>
+
+    </div>
+    
+</body>
+
+<!--Info modal-->
+<div class="modal fade" id="orderInfoModal" tabindex="-1" role="dialog" aria-labelledby="orderInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderInfoModalLabel">Order Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--information content goes here -->
+        <p>Name: C weon</p>
+        <p>Address: De don goyo una al hoyo</p>
+        <p>Payment: efective</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+Heimdall / Assault lvl3
+
+HP 17
+
+STR	13
+DEX	16
+CON	13
+INT	9
+WIS	12
+CHA	10
+
+Morale +1
+Sanity 15
+
+Skills 
+
+Combat Machine (1dg +1 Attack per level)
+Ts +2 v death and poison
+MTF Training +1 firearm attacks
+
+Equipment
+EO-19 Respirator
+BNTI Kirasa-N Body Armour AC +5
+PP19-01 (SemiAuto 1d4, FullAuto 4d4)
+RGD-5 x1 Hand Grenade 4d6 
+7.62x25mm AMMO x40 (Tokarev)
+=======================================================================================================
+BunnyHug / Juggernaut
+
+HP 24
+
+STR	13
+DEX	10
+CON	16
+INT	10
+WIS	9
+CHA	12
+
+Morale +1
+Sanity 15
+
+Skills
+
+Keen instincts(1/4 Chances to find hidden doors, 1/2 chances to not get surprised)
+Goliath: Capable of exceling in most athletic endeavors
+Green beret: Capable of finding supplies almost anywhere
+
+Equipment
+EO-19 Respirator
+BNTI Kirasa-N Body Armour AC +5
+PP19-01 (SemiAuto 1d4 -1 Ammo, FullAuto 4d4 -4 Ammo)
+TT Pistol 1d4
+Crowbar
+7.62x25mm AMMO x50 (Tokarev)
+=======================================================================================================
+Geronimo / Corpsman
+
+HP 17
+
+STR	10
+DEX	13
+CON	14
+INT	11
+WIS	16
+CHA	7
+
+Morale +1
+Sanity 15
+
+Skills
+
+Field Aid (+Character level healing when having bandages or clean rags)
+Practicioner (+2 To any medical endeavor)
+CMS: With a field surgery kit he can heal a crippled limb while in mission(2 uses)
+
+Equipment
+EO-19 Respirator
+BNTI Kirasa-N Body Armour AC +5
+PP19-01 (SemiAuto 1d4, FullAuto 4d4)
+TT Pistol 1d4
+Painkillers x10 +5 Temporary HP -1 dex -1 Wis (1 Hour)
+AI-2 Medkit x1 1d8+2 Healing
+7.62x25mm AMMO x40 (Tokarev)
+=======================================================================================================
+Lucile / SquadLeader
+
+HP 15
+
+STR	10
+DEX	13
+CON	10
+INT	14
+WIS	9
+CHA	16
+
+Morale +1
+Sanity 15
+
+Skills
+
+High Clearance: With deep Foundation knowledge capable of knowing any of the anomalies in foundation record
+Rousing (CHA CD 13 +7 Sanity(restore))
+Leader: Her squad has deep trust in her +2 to any morale check while the squad is together
+
+Equipment
+EO-19 Respirator
+BNTI Kirasa-N Body Armour AC +5
+PP19-01 Low Light Scope(SemiAuto 1d4, FullAuto 4d4)(night vision)
+TT Pistol 1d4
+Chocolate Bars x8 +6 Sanity(restore) +1 Morale 1 hour
+7.62x25mm AMMO x40 (Tokarev)
