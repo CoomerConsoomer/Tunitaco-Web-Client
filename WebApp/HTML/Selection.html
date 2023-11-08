@@ -111,6 +111,179 @@
         </form>
       </div>
     </div>
+
+    <div class="body">
+      <div class="container">
+        <h1>Taco Crafter</h1>
+        <form id="tacoForm">
+          <div class="mb-3">
+            <label for="tacoName" class="form-label">Taco Name</label>
+            <input type="text" class="form-control" id="tacoName" placeholder="Enter taco name" required>
+          </div>
+          <div class="mb-3">
+            <label for="ingredientDropdown" class="form-label">Select Ingredient</label>
+            <select class="form-select" id="ingredientDropdown">
+              <option value="Beef">Beef</option>
+              <option value="Chicken">Chicken</option>
+              <option value="Pork">Pork</option>
+              <option value="Fish">Fish</option>
+              <option value="Vegetables">Vegetables</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-success" id="addIngredient">Add Ingredient</button>
+          <hr>
+          <div id="ingredientsList">
+            <!-- Ingredients added here -->
+          </div>
+          <button type="button" class="btn btn-danger" id="deleteTaco">Delete Taco</button>
+          <button type="button" class="btn btn-primary" id="uploadTaco">Upload Taco</button>
+        </form>
+      </div>
+
+      <script>
+        $(document).ready(function() {
+          var maxIngredients = 5;
+          var ingredientCount = 0;
+    
+          $('#addIngredient').click(function() {
+            if (ingredientCount < maxIngredients) {
+              var ingredient = $('#ingredientDropdown').val();
+              if (ingredient) {
+                var ingredientItem = '<div class="mb-3">' +
+                  '<label>Ingredient ' + (ingredientCount + 1) + ': ' + ingredient + '</label>' +
+                  '</div>';
+                $('#ingredientsList').append(ingredientItem);
+                ingredientCount++;
+              }
+            }
+          });
+    
+          $('#deleteTaco').click(function() {
+            $('#tacoForm').trigger('reset');
+            $('#ingredientsList').empty();
+            ingredientCount = 0;
+          });
+    
+          $('#uploadTaco').click(function() {
+            var tacoName = $('#tacoName').val();
+            var ingredients = [];
+            $('#ingredientsList label').each(function() {
+              ingredients.push($(this).text());
+            });
+    
+            console.log('Taco Name: ' + tacoName);
+            console.log('Ingredients:');
+            for (var i = 0; i < ingredients.length; i++) {
+              console.log(ingredients[i]);
+            }
+          });
+        });
+      </script>
+    </div>
+
+    <div class="body">
+      <div class="container">
+        <h1>Ingredients Table</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ingredient Name</th>
+              <th>Tag</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>1</td>
+              <td>Ingredient 1</td>
+             <td>Tag A</td>
+               <td><button class="btn btn-primary" onclick="openEditModal(1, 'Ingredient 1', 'Tag A')">Edit</button></td>
+               <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ingredient 2</td>
+              <td>Tag B</td>
+              <td><button class="btn btn-primary">Edit</button></td>
+              <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <!-- more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+      <script>
+        // JavaScript
+      
+        //button click to populate the modal with ingredient data
+        function openEditModal(id, name, tag) {
+          document.getElementById('editIngredientId').value = id;
+          document.getElementById('editIngredientName').value = name;
+          document.getElementById('editIngredientTag').value = tag;
+          $('#editIngredientModal').modal('show');
+        }
+      
+        //saving the edited ingredient
+        document.getElementById('saveEditedIngredient').addEventListener('click', function() {
+          const id = document.getElementById('editIngredientId').value;
+          const name = document.getElementById('editIngredientName').value;
+          const tag = document.getElementById('editIngredientTag').value;
+      
+          // updated data to the server here for saving.
+      
+          //update the table with the new data
+          const table = document.getElementById('ingredientsTable');
+          const row = table.rows[id];
+          row.cells[1].innerText = name; // Update name cell
+          row.cells[2].innerText = tag;  // Update tag cell
+      
+          // Close
+          $('#editIngredientModal').modal('hide');
+        });
+      </script>
+      
+    </div>
+
+
+    <!--ingredients jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!--Table-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
 </body>
 
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editIngredientModal" tabindex="-1" role="dialog" aria-labelledby="editIngredientModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editIngredientModalLabel">Edit Ingredient</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editIngredientForm">
+          <input type="hidden" id="editIngredientId" value="">
+          <div class="form-group">
+            <label for="editIngredientName">Ingredient Name</label>
+            <input type="text" class="form-control" id="editIngredientName" required>
+          </div>
+          <div class="form-group">
+            <label for="editIngredientTag">Tag</label>
+            <input type="text" class="form-control" id="editIngredientTag" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveEditedIngredient">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
