@@ -51,6 +51,16 @@
       color: #333;
       }
     </style>
+
+    <style>
+      .taco-table th, .taco-table td {
+      text-align: center;
+   }
+     .taco-buttons {
+      display: flex;
+      justify-content: space-between;
+   }
+</style>
       
 </head>
 
@@ -230,13 +240,13 @@
           const name = document.getElementById('editIngredientName').value;
           const tag = document.getElementById('editIngredientTag').value;
       
-          // updated data to the server here for saving.
+          // updated data for saving
       
           //update the table with the new data
           const table = document.getElementById('ingredientsTable');
           const row = table.rows[id];
-          row.cells[1].innerText = name; // Update name cell
-          row.cells[2].innerText = tag;  // Update tag cell
+          row.cells[1].innerText = name; // Update name 
+          row.cells[2].innerText = tag;  // Update tag 
       
           // Close
           $('#editIngredientModal').modal('hide');
@@ -244,7 +254,50 @@
       </script>
       
     </div>
-
+    
+    <div class="body">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <h2 class="text-center mb-4">Taco Deleter</h2>
+            
+            <!-- Dropdown to select -->
+            <div class="form-group">
+              <label for="tacoSelect">Select a Taco:</label>
+              <select class="form-control" id="tacoSelect">
+                <!-- Add taco options  -->
+              </select>
+            </div>
+      
+            <!-- details -->
+            <table class="table taco-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Info</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="tacoDetails">
+                <!-- details -->
+              </tbody>
+            </table>
+      
+            <!--Info and Delete -->
+            <div class="taco-buttons">
+              <button class="btn btn-info" id="infoButton" enabled>
+                <i class="fas fa-info-circle mr-2"></i> Info
+              </button>
+              <button class="btn btn-danger" id="deleteButton" enabled>
+                <i class="fas fa-trash-alt mr-2"></i> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--ingredients jquery-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
